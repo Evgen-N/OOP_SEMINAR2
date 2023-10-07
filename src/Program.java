@@ -4,11 +4,11 @@ public class Program {
         plate.info();
     
         Cat[] cats = {
-            new Cat("Барсик", 10, false),
-            new Cat("Персик", 25, false),
-            new Cat("Пушок", 20, false),
-            new Cat("Соня", 25, false),
-            new Cat("Арчи", 28, false)
+            new Cat("Барсик", 30, false),
+            new Cat("Персик", 95, false),
+            new Cat("Пушок", 80, false),
+            new Cat("Соня", 55, false),
+            new Cat("Арчи", 42, false)
         };
 
         for (Cat eater : cats) {
@@ -20,6 +20,8 @@ public class Program {
                     else {
                         plate.addFood(100);
                         System.out.printf("В тарелку добавлено 100 корма.\n");
+                        eater.eat(plate.getFood());
+                        plate.setFood(plate.getFood() - eater.getAppetite());
                         plate.info();
                     }
                 }
